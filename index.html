@@ -1,0 +1,4670 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Il nostro piccolo diario online ❤️"
+    >
+
+    <title>Sara & Gian ❤️</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background: #0e0b0c;
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+        }
+
+
+        /* =====================================================
+           HOME
+        ===================================================== */
+
+        .home {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.42),
+                    rgba(0, 0, 0, 0.60)
+                ),
+                url("immagini/nostra-foto.jpg")
+                center / cover no-repeat;
+        }
+
+
+        .home::before {
+            content: "";
+
+            position: absolute;
+            inset: -30px;
+
+            background:
+                url("immagini/nostra-foto.jpg")
+                center / cover no-repeat;
+
+            filter: blur(1px);
+
+            z-index: 0;
+
+            animation:
+                homeZoom
+                15s
+                ease-in-out
+                infinite
+                alternate;
+        }
+
+
+        .home::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.30),
+                    rgba(0, 0, 0, 0.58)
+                );
+
+            z-index: 1;
+        }
+
+
+        @keyframes homeZoom {
+
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+
+        }
+
+
+        .home-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(850px, 90%);
+
+            padding: 30px;
+        }
+
+
+        .home-small {
+            font-size: 18px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+
+            opacity: 0.9;
+        }
+
+
+        .home h1 {
+            font-size:
+                clamp(
+                    55px,
+                    9vw,
+                    110px
+                );
+
+            font-weight: normal;
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.7);
+        }
+
+
+        .home-subtitle {
+            font-size:
+                clamp(
+                    18px,
+                    3vw,
+                    25px
+                );
+
+            font-style: italic;
+
+            line-height: 1.7;
+
+            margin-bottom: 45px;
+
+            opacity: 0.95;
+        }
+
+
+        /* =====================================================
+           BOTTONE
+        ===================================================== */
+
+        .enter-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 18px 38px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.65);
+
+            border-radius: 50px;
+
+            background:
+                rgba(255, 255, 255, 0.12);
+
+            color: white;
+
+            font-family: inherit;
+            font-size: 17px;
+
+            cursor: pointer;
+
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        .enter-button:hover {
+            background:
+                rgba(255, 255, 255, 0.22);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        .enter-button:active {
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* =====================================================
+           DIARIO
+        ===================================================== */
+
+        #diario {
+            position: relative;
+
+            background: #171113;
+
+            min-height: 100vh;
+        }
+
+
+        .diary-background {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            background:
+                linear-gradient(
+                    rgba(10, 7, 8, 0.65),
+                    rgba(10, 7, 8, 0.80)
+                ),
+                url("immagini/nostra-foto.jpg")
+                center / cover no-repeat;
+
+            opacity: 0;
+
+            transition:
+                opacity 2s ease;
+
+            pointer-events: none;
+        }
+
+
+        .diary-background.visible {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .diary-intro {
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 25px;
+        }
+
+
+        .diary-intro span {
+            font-size: 15px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            opacity: 0.7;
+
+            margin-bottom: 25px;
+        }
+
+
+        .diary-intro h2 {
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    80px
+                );
+
+            font-weight: normal;
+
+            line-height: 1.1;
+
+            margin-bottom: 30px;
+        }
+
+
+        .diary-intro p {
+            max-width: 700px;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            opacity: 0.9;
+        }
+
+
+        /* =====================================================
+           RICORDI
+        ===================================================== */
+
+        .memories {
+            position: relative;
+
+            z-index: 2;
+
+            width:
+                min(
+                    1200px,
+                    90%
+                );
+
+            margin: auto;
+
+            padding-bottom: 150px;
+        }
+
+
+        .memory {
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 80px;
+
+            margin-bottom: 120px;
+
+            opacity: 0;
+
+            transform:
+                translateY(70px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        .memory.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .memory:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+
+        /* =====================================================
+           MEDIA RICORDI
+        ===================================================== */
+
+        .memory-media {
+            width: 50%;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .media-frame {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 520px;
+
+            border-radius: 5px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            box-shadow:
+                0 30px 70px
+                rgba(0, 0, 0, 0.45);
+
+            overflow: hidden;
+
+            transform:
+                rotate(-2deg);
+
+            transition:
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+
+        .memory:nth-child(even)
+        .media-frame {
+            transform:
+                rotate(2deg);
+        }
+
+
+        .media-frame:hover {
+            transform:
+                rotate(0deg)
+                scale(1.025);
+
+            box-shadow:
+                0 40px 90px
+                rgba(0, 0, 0, 0.55);
+        }
+
+
+        .media-frame img,
+        .media-frame video {
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        .media-frame video {
+            background: #000;
+        }
+
+
+        /* =====================================================
+           DUE FOTO
+        ===================================================== */
+
+        .media-frame-double {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+
+            background: #000;
+        }
+
+
+        .media-frame-double img {
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+        }
+
+
+        /* =====================================================
+           TESTO
+        ===================================================== */
+
+        .memory-text {
+            flex: 1;
+
+            padding: 20px;
+        }
+
+
+        .memory-number {
+            display: block;
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+
+            color: #dbaeb5;
+
+            margin-bottom: 18px;
+        }
+
+
+        .memory-text h3 {
+            font-size:
+                clamp(
+                    32px,
+                    4vw,
+                    50px
+                );
+
+            font-weight: normal;
+
+            line-height: 1.2;
+
+            margin-bottom: 25px;
+        }
+
+
+        .memory-text p {
+            font-size: 18px;
+
+            line-height: 2;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.85
+                );
+        }
+
+
+        .memory-text ul {
+            margin:
+                20px 0
+                20px 25px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.85
+                );
+        }
+
+
+        .memory-text li {
+            margin-bottom: 10px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           AMORE A PRIMA VISTA
+        ===================================================== */
+
+        .love-at-first-sight {
+            color: #ff2b2b;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 3px 15px
+                rgba(255, 0, 0, 0.25);
+        }
+
+
+        /* =====================================================
+           TI AMO
+        ===================================================== */
+
+        .love-message {
+            text-align: center;
+
+            font-size:
+                clamp(
+                    35px,
+                    5vw,
+                    55px
+                );
+
+            font-weight: normal;
+
+            color: #2388ff;
+
+            margin:
+                30px 0;
+
+            text-shadow:
+                0 5px 25px
+                rgba(
+                    35,
+                    136,
+                    255,
+                    0.45
+                );
+        }
+
+
+        .memory-date {
+            display: block;
+
+            margin-top: 30px;
+
+            font-size: 14px;
+
+            font-style: italic;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.55
+                );
+        }
+
+
+        /* =====================================================
+           RICORDO CON CANZONE
+        ===================================================== */
+
+        .song-memory .memory-text::before {
+            content: "♫";
+
+            display: block;
+
+            font-size: 25px;
+
+            color: #dbaeb5;
+
+            margin-bottom: 15px;
+
+            opacity: 0.8;
+        }
+
+
+        /* =====================================================
+           GALLERIA FINALE
+        ===================================================== */
+
+        .final-gallery {
+            position: relative;
+
+            z-index: 2;
+
+            width:
+                min(
+                    1400px,
+                    94%
+                );
+
+            margin: 0 auto;
+
+            padding:
+                100px
+                0
+                120px;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           FOTO GRANDE FINALE
+        ===================================================== */
+
+        .final-photo {
+            width: 100%;
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 80px;
+
+            opacity: 0;
+
+            transform:
+                translateY(80px)
+                scale(0.94);
+
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease;
+        }
+
+
+        .final-photo.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+
+        .final-photo img {
+            width: 100%;
+
+            max-width: 900px;
+
+            max-height: 700px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            display: block;
+
+            box-shadow:
+                0 35px 100px
+                rgba(0, 0, 0, 0.65);
+
+            transition:
+                transform 0.6s ease,
+                box-shadow 0.6s ease;
+        }
+
+
+        .final-photo img:hover {
+            transform:
+                scale(1.015);
+
+            box-shadow:
+                0 45px 120px
+                rgba(0, 0, 0, 0.8);
+        }
+
+
+        /* =====================================================
+           TITOLO GALLERIA
+        ===================================================== */
+
+        .gallery-title {
+            margin-bottom: 45px;
+
+            opacity: 0;
+
+            transform:
+                translateY(40px);
+
+            transition:
+                opacity 1s ease,
+                transform 1s ease;
+        }
+
+
+        .gallery-title.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .gallery-title h2 {
+            font-size:
+                clamp(
+                    38px,
+                    6vw,
+                    65px
+                );
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+        }
+
+
+        .gallery-title p {
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.7
+                );
+        }
+
+
+        /* =====================================================
+           NUOVA GALLERIA ORIZZONTALE
+        ===================================================== */
+
+        .media-carousel-wrapper {
+            position: relative;
+
+            width: 100%;
+
+            opacity: 0;
+
+            transform:
+                translateY(70px);
+
+            transition:
+                opacity 1.2s ease,
+                transform 1.2s ease;
+        }
+
+
+        .media-carousel-wrapper.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .media-carousel {
+            display: flex;
+
+            gap: 22px;
+
+            overflow-x: auto;
+
+            overflow-y: hidden;
+
+            padding:
+                20px
+                20px
+                40px;
+
+            scroll-behavior: smooth;
+
+            scroll-snap-type:
+                x mandatory;
+
+            cursor: grab;
+
+            scrollbar-width: none;
+
+            -webkit-overflow-scrolling: touch;
+
+            overscroll-behavior-x: contain;
+        }
+
+
+        .media-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .media-carousel.dragging {
+            cursor: grabbing;
+
+            scroll-behavior: auto;
+
+            scroll-snap-type: none;
+        }
+
+
+        /* =====================================================
+           SINGOLO ELEMENTO GALLERIA
+        ===================================================== */
+
+        .carousel-item {
+            position: relative;
+
+            flex:
+                0 0
+                min(
+                    480px,
+                    78vw
+                );
+
+            height: 570px;
+
+            overflow: hidden;
+
+            border-radius: 10px;
+
+            background: #090708;
+
+            box-shadow:
+                0 25px 70px
+                rgba(0, 0, 0, 0.50);
+
+            scroll-snap-align: center;
+
+            user-select: none;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+        }
+
+
+        .carousel-item:hover {
+            transform:
+                translateY(-7px);
+
+            box-shadow:
+                0 35px 90px
+                rgba(0, 0, 0, 0.65);
+        }
+
+
+        .carousel-item img,
+        .carousel-item video {
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+        .carousel-item video {
+            background: #000;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           PRIMA FOTO DELLA GALLERIA
+           FOTO 1 LASCIATA NORMALE
+        ===================================================== */
+
+        .carousel-item.first-photo img {
+            object-fit: cover;
+        }
+
+
+        /* =====================================================
+           ETICHETTA FOTO / VIDEO
+        ===================================================== */
+
+        .media-label {
+            position: absolute;
+
+            top: 18px;
+
+            left: 18px;
+
+            z-index: 5;
+
+            padding:
+                8px
+                14px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.55
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.20
+                );
+
+            backdrop-filter:
+                blur(10px);
+
+            -webkit-backdrop-filter:
+                blur(10px);
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           GRADIENT GALLERIA
+        ===================================================== */
+
+        .carousel-fade-left,
+        .carousel-fade-right {
+            position: absolute;
+
+            top: 0;
+
+            bottom: 20px;
+
+            width: 90px;
+
+            z-index: 10;
+
+            pointer-events: none;
+        }
+
+
+        .carousel-fade-left {
+            left: 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #171113,
+                    transparent
+                );
+        }
+
+
+        .carousel-fade-right {
+            right: 0;
+
+            background:
+                linear-gradient(
+                    to left,
+                    #171113,
+                    transparent
+                );
+        }
+
+
+        /* =====================================================
+           FRECCE
+        ===================================================== */
+
+        .carousel-arrow {
+            position: absolute;
+
+            top: 50%;
+
+            z-index: 20;
+
+            width: 52px;
+            height: 52px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.25
+                );
+
+            border-radius: 50%;
+
+            background:
+                rgba(
+                    20,
+                    15,
+                    17,
+                    0.75
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            transform:
+                translateY(-50%);
+
+            backdrop-filter:
+                blur(12px);
+
+            -webkit-backdrop-filter:
+                blur(12px);
+
+            transition:
+                background 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .carousel-arrow:hover {
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.18
+                );
+
+            transform:
+                translateY(-50%)
+                scale(1.08);
+        }
+
+
+        .carousel-arrow-left {
+            left: 10px;
+        }
+
+
+        .carousel-arrow-right {
+            right: 10px;
+        }
+
+
+        /* =====================================================
+           INDICAZIONE SCORRIMENTO
+        ===================================================== */
+
+        .carousel-hint {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 18px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.50
+                );
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .carousel-hint-arrow {
+            font-size: 18px;
+
+            animation:
+                swipeHint
+                2s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes swipeHint {
+
+            0%,
+            100% {
+                transform:
+                    translateX(0);
+            }
+
+            50% {
+                transform:
+                    translateX(8px);
+            }
+
+        }
+
+
+        /* =====================================================
+           FINALE
+        ===================================================== */
+
+        .ending {
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 80px 25px;
+        }
+
+
+        .ending .heart {
+            font-size: 45px;
+
+            margin-bottom: 30px;
+
+            animation:
+                heartbeat
+                2s
+                infinite;
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.15);
+            }
+
+        }
+
+
+        .ending h2 {
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    80px
+                );
+
+            font-weight: normal;
+
+            margin-bottom: 30px;
+        }
+
+
+        .ending p {
+            max-width: 650px;
+
+            font-size: 20px;
+
+            line-height: 1.9;
+
+            opacity: 0.85;
+        }
+
+
+        /* =====================================================
+           PLAYER
+        ===================================================== */
+
+        .music-player {
+            position: fixed;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            z-index: 100;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            padding:
+                12px
+                20px;
+
+            background:
+                rgba(
+                    20,
+                    15,
+                    17,
+                    0.78
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            border-radius: 50px;
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.5s ease;
+        }
+
+
+        .music-player.active {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+
+        .music-button {
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: white;
+
+            color: #1b1214;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            transition:
+                transform 0.2s ease;
+        }
+
+
+        .music-button:hover {
+            transform:
+                scale(1.08);
+        }
+
+
+        .music-title {
+            font-size: 14px;
+
+            white-space: nowrap;
+
+            opacity: 0.9;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            padding:
+                30px
+                20px
+                80px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.45
+                );
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .home {
+                min-height: 100svh;
+            }
+
+
+            .home-content {
+                width: 94%;
+
+                padding: 20px;
+            }
+
+
+            .home-small {
+                font-size: 13px;
+
+                letter-spacing: 3px;
+
+                margin-bottom: 20px;
+            }
+
+
+            .home-subtitle {
+                margin-bottom: 35px;
+            }
+
+
+            .diary-intro {
+                min-height: 90vh;
+
+                padding:
+                    70px
+                    20px;
+            }
+
+
+            .diary-intro p {
+                font-size: 17px;
+
+                line-height: 1.8;
+            }
+
+
+            .memories {
+                width: 92%;
+            }
+
+
+            .memory,
+            .memory:nth-child(even) {
+                flex-direction: column;
+
+                gap: 40px;
+
+                min-height: auto;
+
+                margin-bottom: 100px;
+
+                align-items: stretch;
+            }
+
+
+            .memory-media {
+                width: 100%;
+            }
+
+
+            .memory-text {
+                width: 100%;
+
+                padding:
+                    0
+                    5px;
+            }
+
+
+            .media-frame,
+            .memory:nth-child(even)
+            .media-frame {
+                transform:
+                    rotate(0);
+            }
+
+
+            .media-frame:hover {
+                transform:
+                    scale(1.01);
+            }
+
+
+            .memory-text p {
+                font-size: 17px;
+
+                line-height: 1.9;
+            }
+
+
+            .media-frame-double {
+                flex-direction: row;
+
+                gap: 4px;
+
+                aspect-ratio:
+                    2 / 1;
+
+                max-height: 360px;
+            }
+
+
+            .media-frame-double img {
+                width: 50%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+                background: #111;
+            }
+
+
+            /* =================================================
+               GALLERIA MOBILE
+            ================================================= */
+
+            .final-gallery {
+                width: 100%;
+
+                padding:
+                    70px
+                    0
+                    100px;
+            }
+
+
+            .final-photo {
+                padding:
+                    0
+                    3%;
+                
+                margin-bottom: 60px;
+            }
+
+
+            .final-photo img {
+                max-height: 600px;
+
+                border-radius: 5px;
+            }
+
+
+            .gallery-title {
+                padding:
+                    0
+                    5%;
+
+                margin-bottom: 30px;
+            }
+
+
+            .gallery-title p {
+                font-size: 16px;
+            }
+
+
+            .media-carousel {
+                gap: 14px;
+
+                padding:
+                    15px
+                    8%
+                    30px;
+            }
+
+
+            .carousel-item {
+                flex:
+                    0 0
+                    82vw;
+
+                height:
+                    520px;
+
+                border-radius: 8px;
+            }
+
+
+            .carousel-arrow {
+                width: 45px;
+                height: 45px;
+
+                font-size: 18px;
+            }
+
+
+            .carousel-arrow-left {
+                left: 8px;
+            }
+
+
+            .carousel-arrow-right {
+                right: 8px;
+            }
+
+
+            .carousel-fade-left,
+            .carousel-fade-right {
+                width: 45px;
+            }
+
+
+            .carousel-hint {
+                font-size: 12px;
+            }
+
+
+            /* =================================================
+               PLAYER MOBILE
+            ================================================= */
+
+            .music-player {
+                bottom: 15px;
+
+                max-width: 90%;
+
+                padding:
+                    10px
+                    15px;
+            }
+
+
+            .music-title {
+                font-size: 12px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE PICCOLO
+        ===================================================== */
+
+        @media (max-width: 450px) {
+
+            .home h1 {
+                font-size: 50px;
+            }
+
+
+            .home-small {
+                font-size: 11px;
+            }
+
+
+            .home-subtitle {
+                font-size: 17px;
+            }
+
+
+            .enter-button {
+                padding:
+                    16px
+                    30px;
+
+                font-size: 16px;
+            }
+
+
+            .diary-intro h2 {
+                font-size: 42px;
+            }
+
+
+            .memory-text h3 {
+                font-size: 31px;
+            }
+
+
+            .music-title {
+                display: none;
+            }
+
+
+            .music-player {
+                padding: 8px;
+            }
+
+
+            .carousel-item {
+                flex:
+                    0 0
+                    84vw;
+
+                height:
+                    470px;
+            }
+
+
+            .final-photo img {
+                max-height: 500px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RIDUZIONE MOVIMENTO
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         AUDIO PRINCIPALE
+    ===================================================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="canzoni/la-nostra-canzone.mp3"
+            type="audio/mpeg"
+        >
+
+        Il tuo browser non supporta l'audio.
+
+    </audio>
+
+
+    <!-- =====================================================
+         AUDIO RICORDO 12
+    ===================================================== -->
+
+    <audio
+        id="sanninoMusic"
+        preload="auto"
+    >
+
+        <source
+            src="canzoni/sannino.mp3"
+            type="audio/mpeg"
+        >
+
+        Il tuo browser non supporta l'audio.
+
+    </audio>
+
+
+    <!-- =====================================================
+         HOME
+    ===================================================== -->
+
+    <section
+        class="home"
+        id="home"
+    >
+
+        <div class="home-content">
+
+            <div class="home-small">
+                Una piccola cosa per te
+            </div>
+
+            <h1>
+                Il nostro diario
+            </h1>
+
+            <p class="home-subtitle">
+                Ci tenevo a salvare in un piccolo diario online
+                i nostri ricordi, ecco a te...
+            </p>
+
+            <button
+                class="enter-button"
+                id="enterButton"
+                type="button"
+            >
+                Entra ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DIARIO
+    ===================================================== -->
+
+    <main id="diario">
+
+        <div
+            class="diary-background"
+            id="diaryBackground"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- =================================================
+             INTRO
+        ================================================= -->
+
+        <section class="diary-intro">
+
+            <span>
+                La nostra storia
+            </span>
+
+            <h2>
+                Da qui comincia tutto.
+            </h2>
+
+            <p>
+                Non ho mai saputo corteggiare una ragazza,
+                o comunque non ho mai saputo provarci.
+
+                Infatti con te è iniziato tutto da un tuo segui,
+                che a me inizialmente mi hai fatto solo che gasare.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             RICORDI
+        ================================================= -->
+
+        <section
+            class="memories"
+            aria-label="I nostri ricordi"
+        >
+
+
+            <!-- =================================================
+                 RICORDO 1
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo1.PNG"
+                            alt="Il tuo primo segui"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL SEGUI DI INSTAGRAM
+                    </span>
+
+                    <h3>
+                        📍 Circolo Mons. Raimondo Russo - San Felice
+                    </h3>
+
+                    <p>
+                        Come puoi vedere dalla foto della chat con Ersilia,
+                        la sera del torneo a San Felice mi iniziasti a seguire,
+                        e sincero, mi gasai maledettamente.
+
+                        Infatti come primo pensiero,
+                        dissi ad Ersy dell'accaduto.
+                    </p>
+
+                    <span class="memory-date">
+                        21 LUGLIO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 2
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo2.PNG"
+                            alt="Il nostro secondo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        I PRIMI MESSAGGI
+                    </span>
+
+                    <h3>
+                        ✉️ Il primo messaggio di Instagram
+                    </h3>
+
+                    <p>
+                        Il primo messaggio fu proprio il mio,
+                        diciamo con una scusa un po' di merda ti ho scritto.
+
+                        Però pensa al lato positivo:
+                        oltre a te non posso corteggiare nessun'altra...
+                    </p>
+
+                    <span class="memory-date">
+                        22 LUGLIO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 3
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo3.PNG"
+                            alt="Il nostro terzo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        I PRIMI MESSAGGI
+                    </span>
+
+                    <h3>
+                        ✉️ Da Instagram alle note
+                    </h3>
+
+                    <p>
+                        Diciamo che non fu proprio un successo quel messaggio,
+                        però notavamo che nonostante ciò avevamo voglia di conoscerci.
+
+                        Fino ad arrivare a scriverci sulle note.
+
+                        Ti dico la verità, non ricordo chi ha scritto a chi,
+                        però ricordo che dopo quella lunga giornata
+                        all'Acqua Farm con Rocco la Verza,
+                        mi aiutò a prendere coraggio e a risponderti
+                        l'ultima sera del torneo.
+
+                        E da lì iniziammo a parlare...
+                    </p>
+
+                    <span class="memory-date">
+                        25 LUGLIO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 4
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/ricordo4.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        LE PRIME VOLTE INSIEME
+                    </span>
+
+                    <h3>
+                        📍 Piazza Mons. Don Raimondo Russo
+                    </h3>
+
+                    <p>
+                        Questa eravamo noi!
+
+                        Felici, insieme, su una panchina in piazzetta,
+                        a parlare di noi e di tutte le nostre storie...
+                    </p>
+
+                    <span class="memory-date">
+                        31 LUGLIO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 5
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo5.JPEG"
+                            alt="Il nostro quinto ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        LE PRIME VOLTE INSIEME
+                    </span>
+
+                    <h3>
+                        📍 Acqua Farm - Salerno
+                    </h3>
+
+                    <p>
+                        Questa è stata una delle nostre prime foto.
+
+                        <br><br>
+
+                        Parlando per circa una settimana,
+                        ci eravamo detti di andare insieme
+                        all'Acqua Farm con Rocco Verza.
+
+                        <br><br>
+
+                        Eravamo partiti la mattina con la speranza
+                        di stare nello stesso pullman,
+                        ma Rocco ha voluto fare un po' il pedofilo
+                        e ha voluto dividere femmine e maschi.
+
+                        <br><br>
+
+                        Quel giorno all'Acqua Farm non stavamo mai insieme,
+                        finché ci siamo trovati vicini di sdraio,
+                        mano nella mano, per la nostra prima volta!
+
+                        <br><br>
+
+                        PS:
+                        ti ricordo che quel giorno ti ho buttato
+                        nell'acqua da bordo piscina...
+                    </p>
+
+                    <span class="memory-date">
+                        1 AGOSTO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 6
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame media-frame-double">
+
+                        <img
+                            src="immagini/ricordo6.jpeg"
+                            alt="Il nostro sesto ricordo - foto 1"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="immagini/ricordo6-2.jpeg"
+                            alt="Il nostro sesto ricordo - foto 2"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        QUALCHE MESSAGGIO DOLCE
+                    </span>
+
+                    <h3>
+                        I nostri messaggi
+                    </h3>
+
+                    <p>
+                        Anche se ad oggi,
+                        non ci diciamo più i complimenti di prima,
+                        o comunque non siamo più dolci come prima,
+
+                        c'era un tempo che ci dicevamo tutto e di più.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 7
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/ricordo7.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL NOSTRO PRIMO BACIO
+                    </span>
+
+                    <h3>
+                        3 AGOSTO 2025
+                    </h3>
+
+                    <p>
+                        Una delle date più importanti della nostra relazione
+                        è stato proprio il nostro primo bacio.
+
+                        <br><br>
+
+                        Io non ricordo niente,
+                        però quando siamo tornati a casa,
+                        quando abbiamo parlato dell'accaduto...
+
+                        <br><br>
+
+                        Abbiamo deciso di iniziare un percorso insieme.
+
+                        <br><br>
+
+                        Qua non ci sono foto,
+                        o ricordi da condividere,
+                        anche perché solo noi possiamo sapere
+                        quanto sia stato bello...
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 8
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo8.JPEG"
+                            alt="La nostra prima rosa"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL NOSTRO PRIMO MESE
+                    </span>
+
+                    <h3>
+                        🌹 La nostra prima rosa
+                    </h3>
+
+                    <p>
+                        Uno dei primi regali che ho pensato di fare
+                        è stato regalare una rosa rossa, che significa:
+
+                        <br><br>
+
+                        <span class="love-at-first-sight">
+                            "Amore a prima vista".
+                        </span>
+
+                        <br><br>
+
+                        Proprio quello che mi è capitato con te...
+                    </p>
+
+                    <span class="memory-date">
+                        13 SETTEMBRE 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 9
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/ricordo9.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL NOSTRO SECONDO MESE
+                    </span>
+
+                    <h3>
+                        💙🌹 Un altro regalo importante
+                    </h3>
+
+                    <p>
+                        Sapevo già che meritavi tutto l'amore
+                        che una persona potesse darti,
+                        soprattutto se l'amore già è sentito.
+
+                        <br><br>
+
+                        Ti ho regalato 3 rose, che stavano
+                        a significare solo una cosa:
+                    </p>
+
+                    <div class="love-message">
+                        TI AMO
+                    </div>
+
+                    <p>
+                        Il colore delle rose erano BLU,
+                        che sta per:
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Amore a prima vista
+                        </li>
+
+                        <li>
+                            Fedeltà e lealtà
+                        </li>
+
+                        <li>
+                            Unicità e rarità
+                        </li>
+
+                        <li>
+                            Saggezza e spiritualità
+                        </li>
+
+                    </ul>
+
+                    <p>
+                        Tutto questo è quello che ti meriti,
+                        e non solo...
+                    </p>
+
+                    <span class="memory-date">
+                        8 OTTOBRE 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 10
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/ricordo10.mp4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        NUIJ
+                    </span>
+
+                    <h3>
+                        Semplicemente noi ❤️
+                    </h3>
+
+                    <p>
+                        Sai, quando sto con te mi sento sempre al sicuro.
+
+                        Quando parliamo in piazzetta per ore,
+                        riesco sempre a sentirmi capito,
+                        perché tu mi ascolti, parli,
+                        senza mai giudicarmi.
+
+                        Questa è la cosa che mi piace di noi.
+
+                        <br><br>
+
+                        Per non parlare dei tuoi abbracci...
+
+                        <br><br>
+
+                        Mi fanno sentire sempre al sicuro,
+                        senza insicurezze.
+
+                        <br><br>
+
+                        Mi fanno sentire amato,
+                        proprio perché l'affetto che mi doni
+                        mi fa stare bene.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 11
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo11..JPEG"
+                            alt="Il nostro undicesimo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        UN SORRISO
+                    </span>
+
+                    <h3>
+                        Quando sto con te...
+                    </h3>
+
+                    <p>
+                        E che te lo dico a fare...
+
+                        <br><br>
+
+                        Quando sto con te,
+                        sorrido sempre,
+                        chissà perché...
+                    </p>
+
+                    <span class="memory-date">
+                        18 MARZO 2025
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 12
+            ================================================= -->
+
+            <article
+                class="memory song-memory"
+                id="ricordo12"
+            >
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo12.JPEG"
+                            alt="Il nostro dodicesimo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        UNA CANZONE
+                    </span>
+
+                    <h3>
+                        Una foto che racconta tutto
+                    </h3>
+
+                    <p>
+                        Stai rerenno e te fai 'cchiù vicino
+
+                        <br>
+
+                        Me vase primmo tu
+
+                        <br>
+
+                        E allora sì, abbracciame cchiù forte
+
+                        <br>
+
+                        Pecché po' chi se ne fotte
+
+                        <br>
+
+                        Si tutto 'o tiempo ca è passato è tiempo perzo
+
+                        <br>
+
+                        O si dimane nun esiste niente cchiù
+
+                        <br>
+
+                        Abbracciame stanotte
+
+                        <br>
+
+                        Nun me voglio arricurda'
+
+                        <br>
+
+                        E tutte 'e vote ca t'aggie sunnate
+
+                        <br>
+
+                        Ca me scetave ma nun stive 'ccà
+                    </p>
+
+                    <span class="memory-date">
+                        - Andrea Sannino
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 13
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo13.jpeg"
+                            alt="Il nostro tredicesimo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL FILO ROSSO
+                    </span>
+
+                    <h3>
+                        Il filo rosso che ci unisce 🧵
+                    </h3>
+
+                    <p>
+                        Quando stiamo insieme,
+                        ritorno bambino.
+
+                        <br><br>
+
+                        Mi dimentico tutti i miei problemi
+                        e penso a quanto io sia fortunato
+                        ad averti...
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 RICORDO 14
+            ================================================= -->
+
+            <article class="memory">
+
+                <div class="memory-media">
+
+                    <div class="media-frame">
+
+                        <img
+                            src="immagini/ricordo14.JPEG"
+                            alt="Il nostro quattordicesimo ricordo"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="memory-text">
+
+                    <span class="memory-number">
+                        IL NOSTRO RITORNO
+                    </span>
+
+                    <h3>
+                        Il nostro ritorno
+                    </h3>
+
+                    <p>
+                        So che sono stato uno stronzo
+                        a lasciarti e a farti stare male
+                        per tutta l'estate.
+
+                        <br><br>
+
+                        Non era mia intenzione...
+
+                        Tu sei una persona speciale:
+                        passando del tempo con te ho capito tante cose,
+                        soprattutto che hai un cuore d'oro.
+
+                        <br><br>
+
+                        Mi dispiace veramente tanto
+                        per come mi sono comportato,
+                        ma allo stesso tempo vorrei ringraziarti
+                        per tutto...
+
+                        <br><br>
+
+                        So che tu diresti:
+                        "Grazie per cosa?",
+                        ed è difficile da spiegare.
+
+                        <br><br>
+
+                        Un grazie del genere nasce dall'errore
+                        che ho commesso e di cui mi pento,
+                        ma che tu hai saputo perdonare.
+
+                        Non è da tutti,
+                        e questo mi fa capire
+                        la persona straordinaria che sei:
+                        piena di pazienza, amore e fiducia.
+
+                        <br><br>
+
+                        Io una ragazza così non l'ho mai incontrata,
+                        eppure oggi eccoti qui...
+
+                        <br><br>
+
+                        Mi sento la persona più fortunata del mondo.
+
+                        <br><br>
+
+                        Se dovessi dire cos'è la felicità per me,
+                        farei un sorriso e saprei già cosa rispondere,
+                        perché la risposta per me è ovvia.
+
+                        <br><br>
+
+                        Ti ho sempre amata per la persona che sei
+                        e non smetterò mai di farlo,
+                        anche perché il sentimento per una persona
+                        non scompare all'improvviso,
+                        ma solo con il tempo...
+
+                        <br><br>
+
+                        E molto probabilmente,
+                        io e te, al posto di far svanire questo sentimento,
+                        riusciremo a provarlo in un modo ancora più forte.
+
+                        <br><br>
+
+                        Spero che io e te potremo crescere insieme,
+                        sbagliare altre tremila volte insieme
+                        e costruirci un futuro...
+
+                        <br><br>
+
+                        Ma tutto questo perché?
+
+                        <br><br>
+
+                        Perché io <strong>TI AMO</strong>,
+                        e senza di te i miei sogni non si avvereranno mai.
+
+                        <br><br>
+
+                        Ti amo, amore mio,
+                        e scusami ancora. 💓
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =====================================================
+             GALLERIA FINALE
+        ===================================================== -->
+
+        <section class="final-gallery">
+
+
+            <!-- =================================================
+                 FOTO GRANDE
+            ================================================= -->
+
+            <div class="final-photo">
+
+                <img
+                    src="immagini/scritta.JPEG"
+                    alt="Il nostro ricordo più bello"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 TITOLO
+            ================================================= -->
+
+            <div class="gallery-title">
+
+                <h2>
+                    Noi ❤️
+                </h2>
+
+                <p>
+                    E questi sono solo alcuni dei momenti
+                    che voglio ricordare per sempre...
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 CAROSELLO FOTO + VIDEO
+            ================================================= -->
+
+            <div
+                class="media-carousel-wrapper"
+                id="mediaCarouselWrapper"
+            >
+
+                <button
+                    class="carousel-arrow carousel-arrow-left"
+                    id="carouselLeft"
+                    type="button"
+                    aria-label="Scorri verso sinistra"
+                >
+                    ←
+                </button>
+
+
+                <div
+                    class="carousel-fade-left"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="media-carousel"
+                    id="mediaCarousel"
+                >
+
+
+                    <!-- =================================================
+                         FOTO 1
+                         LASCIATA COSÌ COM'È
+                    ================================================= -->
+
+                    <div
+                        class="carousel-item first-photo"
+                    >
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/lei.JPEG"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         VIDEO 1
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Video
+                        </span>
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/cane.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 2
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/noi1.JPEG"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 3
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/noi2.JPEG"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         VIDEO 2
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Video
+                        </span>
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/noi.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 4
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/noi6.JPEG"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 5
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/lui.JPEG"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         VIDEO 3
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Video
+                        </span>
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/noi3.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 6
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Video
+                        </span>
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/noi4.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         VIDEO 4
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Video
+                        </span>
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                        >
+
+                            <source
+                                src="immagini/noi5.MP4"
+                                type="video/mp4"
+                            >
+
+                            Il tuo browser non supporta
+                            la riproduzione video.
+
+                        </video>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 7
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/foto7.jpg"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FOTO 8
+                    ================================================= -->
+
+                    <div class="carousel-item">
+
+                        <span class="media-label">
+                            Foto
+                        </span>
+
+                        <img
+                            src="immagini/foto8.jpg"
+                            alt="Un nostro ricordo"
+                            loading="lazy"
+                            draggable="false"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    class="carousel-fade-right"
+                    aria-hidden="true"
+                ></div>
+
+
+                <button
+                    class="carousel-arrow carousel-arrow-right"
+                    id="carouselRight"
+                    type="button"
+                    aria-label="Scorri verso destra"
+                >
+                    →
+                </button>
+
+
+                <div class="carousel-hint">
+
+                    <span class="carousel-hint-arrow">
+                        ←
+                    </span>
+
+                    Scorri per vedere i nostri ricordi
+
+                    <span class="carousel-hint-arrow">
+                        →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINALE
+        ===================================================== -->
+
+        <section class="ending">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <h2>
+                E questo è solo l'inizio.
+            </h2>
+
+            <p>
+                Di tutte le foto,
+                tutti i video,
+                tutti i messaggi
+                e tutti i ricordi,
+                anche se sono pochi,
+                abbiamo tanto da
+                archiviare...
+
+                <br><br>
+
+                Ti amo.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================================
+             FOOTER
+        ===================================================== -->
+
+        <footer class="footer">
+
+            By Gianpaolo 30/09/2026
+
+        </footer>
+
+    </main>
+
+
+    <!-- =====================================================
+         PLAYER
+    ===================================================== -->
+
+    <div
+        class="music-player"
+        id="musicPlayer"
+        aria-label="Controlli musica"
+    >
+
+        <button
+            class="music-button"
+            id="musicButton"
+            type="button"
+            aria-label="Metti in pausa"
+        >
+            ❚❚
+        </button>
+
+        <span
+            class="music-title"
+            id="musicTitle"
+        >
+            ♫ La nostra canzone
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+  if ("scrollRestoration" in history) {
+            history.scrollRestoration = "manual";
+        }
+
+        window.scrollTo(0, 0);
+
+        window.addEventListener("beforeunload", () => {
+            window.scrollTo(0, 0);
+        });
+
+
+
+
+        /* =====================================================
+           ELEMENTI
+        ===================================================== */
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+
+        const sanninoMusic =
+            document.getElementById(
+                "sanninoMusic"
+            );
+
+
+        const enterButton =
+            document.getElementById(
+                "enterButton"
+            );
+
+
+        const musicPlayer =
+            document.getElementById(
+                "musicPlayer"
+            );
+
+
+        const musicButton =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        const musicTitle =
+            document.getElementById(
+                "musicTitle"
+            );
+
+
+        const diaryBackground =
+            document.getElementById(
+                "diaryBackground"
+            );
+
+
+        const diary =
+            document.getElementById(
+                "diario"
+            );
+
+
+        const memories =
+            document.querySelectorAll(
+                ".memory"
+            );
+
+
+        const videos =
+            document.querySelectorAll(
+                ".memory video"
+            );
+
+
+        const songMemory =
+            document.getElementById(
+                "ricordo12"
+            );
+
+
+        /* =====================================================
+           GALLERIA
+        ===================================================== */
+
+        const finalPhoto =
+            document.querySelector(
+                ".final-photo"
+            );
+
+
+        const galleryTitle =
+            document.querySelector(
+                ".gallery-title"
+            );
+
+
+        const carouselWrapper =
+            document.getElementById(
+                "mediaCarouselWrapper"
+            );
+
+
+        const carousel =
+            document.getElementById(
+                "mediaCarousel"
+            );
+
+
+        const carouselLeft =
+            document.getElementById(
+                "carouselLeft"
+            );
+
+
+        const carouselRight =
+            document.getElementById(
+                "carouselRight"
+            );
+
+
+        const carouselVideos =
+            document.querySelectorAll(
+                ".media-carousel video"
+            );
+
+
+        /* =====================================================
+           STATO AUDIO
+        ===================================================== */
+
+        let musicStarted = false;
+
+        let sanninoIsPlaying = false;
+
+        let mainMusicWasPlaying = false;
+
+        let activeVideo = null;
+
+        let pageEntered = false;
+
+
+        /* =====================================================
+           PLAY AUDIO SICURO
+        ===================================================== */
+
+        async function playAudio(audio) {
+
+            if (!audio) {
+                return false;
+            }
+
+            try {
+
+                await audio.play();
+
+                return true;
+
+            } catch (error) {
+
+                console.log(
+                    "Riproduzione audio bloccata:",
+                    error
+                );
+
+                return false;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           AGGIORNA PLAYER
+        ===================================================== */
+
+        function updateMusicPlayer() {
+
+            if (sanninoIsPlaying) {
+
+                musicButton.textContent =
+                    "❚❚";
+
+                musicTitle.textContent =
+                    "♫ Andrea Sannino";
+
+                return;
+            }
+
+
+            if (
+                music &&
+                !music.paused
+            ) {
+
+                musicButton.textContent =
+                    "❚❚";
+
+                musicTitle.textContent =
+                    "♫ La nostra canzone";
+
+                return;
+            }
+
+
+            musicButton.textContent =
+                "▶";
+        }
+
+
+        /* =====================================================
+           ENTRA NEL DIARIO
+        ===================================================== */
+
+        async function entraNelDiario() {
+
+            pageEntered = true;
+
+
+            musicPlayer.classList.add(
+                "active"
+            );
+
+
+            diaryBackground.classList.add(
+                "visible"
+            );
+
+
+            if (music) {
+
+                music.volume =
+                    0.45;
+
+
+                const started =
+                    await playAudio(
+                        music
+                    );
+
+
+                if (started) {
+
+                    musicStarted =
+                        true;
+
+                    updateMusicPlayer();
+
+                }
+
+            }
+
+
+            diary.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
+
+
+        enterButton.addEventListener(
+            "click",
+            entraNelDiario
+        );
+
+
+        /* =====================================================
+           PLAY / PAUSA MUSICA
+        ===================================================== */
+
+        async function toggleMusic() {
+
+            if (sanninoIsPlaying) {
+
+                if (
+                    sanninoMusic.paused
+                ) {
+
+                    await playAudio(
+                        sanninoMusic
+                    );
+
+                } else {
+
+                    sanninoMusic.pause();
+
+                }
+
+
+                updateMusicPlayer();
+
+                return;
+            }
+
+
+            if (!music) {
+                return;
+            }
+
+
+            if (music.paused) {
+
+                music.volume =
+                    0.45;
+
+                await playAudio(
+                    music
+                );
+
+                musicStarted =
+                    true;
+
+            } else {
+
+                music.pause();
+
+            }
+
+
+            updateMusicPlayer();
+
+        }
+
+
+        musicButton.addEventListener(
+            "click",
+            toggleMusic
+        );
+
+
+        /* =====================================================
+           ANIMAZIONE RICORDI
+        ===================================================== */
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        memories.forEach(
+            (memory) => {
+
+                observer.observe(
+                    memory
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           VIDEO DEI RICORDI
+        ===================================================== */
+
+        function stopMainMusicForVideo() {
+
+            if (
+                music &&
+                !music.paused
+            ) {
+
+                mainMusicWasPlaying =
+                    true;
+
+                music.pause();
+
+            }
+
+
+            updateMusicPlayer();
+
+        }
+
+
+        async function resumeMainMusic() {
+
+            if (sanninoIsPlaying) {
+                return;
+            }
+
+
+            if (
+                !music ||
+                !mainMusicWasPlaying
+            ) {
+
+                updateMusicPlayer();
+
+                return;
+            }
+
+
+            if (
+                activeVideo &&
+                !activeVideo.paused
+            ) {
+
+                return;
+            }
+
+
+            music.volume =
+                0.45;
+
+
+            await playAudio(
+                music
+            );
+
+
+            mainMusicWasPlaying =
+                false;
+
+
+            updateMusicPlayer();
+
+        }
+
+
+        videos.forEach(
+            (video) => {
+
+                video.playsInline =
+                    true;
+
+
+                video.preload =
+                    "metadata";
+
+
+                video.addEventListener(
+                    "play",
+                    () => {
+
+                        activeVideo =
+                            video;
+
+                        stopMainMusicForVideo();
+
+                    }
+                );
+
+
+                video.addEventListener(
+                    "pause",
+                    () => {
+
+                        if (
+                            activeVideo ===
+                            video
+                        ) {
+
+                            activeVideo =
+                                null;
+
+                            resumeMainMusic();
+
+                        }
+
+                    }
+                );
+
+
+                video.addEventListener(
+                    "ended",
+                    () => {
+
+                        if (
+                            activeVideo ===
+                            video
+                        ) {
+
+                            activeVideo =
+                                null;
+
+                            resumeMainMusic();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           AUTOPLAY VIDEO RICORDI
+        ===================================================== */
+
+        const videoObserver =
+            new IntersectionObserver(
+
+                async (entries) => {
+
+                    for (
+                        const entry
+                        of entries
+                    ) {
+
+                        const video =
+                            entry.target;
+
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            if (
+                                sanninoIsPlaying
+                            ) {
+
+                                continue;
+
+                            }
+
+
+                            stopMainMusicForVideo();
+
+
+                            try {
+
+                                video.muted =
+                                    false;
+
+                                video.volume =
+                                    1;
+
+                                await video.play();
+
+                            } catch (error) {
+
+                                console.log(
+                                    "Autoplay video con audio bloccato:",
+                                    error
+                                );
+
+
+                                try {
+
+                                    video.muted =
+                                        true;
+
+                                    await video.play();
+
+                                } catch (
+                                    secondError
+                                ) {
+
+                                    console.log(
+                                        "Impossibile avviare il video:",
+                                        secondError
+                                    );
+
+                                }
+
+                            }
+
+                        } else {
+
+                            video.pause();
+
+                        }
+
+                    }
+
+                },
+
+                {
+                    threshold: 0.55
+                }
+
+            );
+
+
+        videos.forEach(
+            (video) => {
+
+                videoObserver.observe(
+                    video
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           RICORDO 12 - SANNINO
+        ===================================================== */
+
+        let songObserver = null;
+
+
+        async function startSannino() {
+
+            if (!sanninoMusic) {
+                return;
+            }
+
+
+            if (sanninoIsPlaying) {
+                return;
+            }
+
+
+            mainMusicWasPlaying =
+                music &&
+                !music.paused;
+
+
+            if (music) {
+
+                music.pause();
+
+            }
+
+
+            videos.forEach(
+                (video) => {
+
+                    if (
+                        !video.paused
+                    ) {
+
+                        video.pause();
+
+                    }
+
+                }
+            );
+
+
+            sanninoMusic.pause();
+
+            sanninoMusic.currentTime =
+                0;
+
+            sanninoMusic.volume =
+                0.8;
+
+
+            sanninoIsPlaying =
+                true;
+
+
+            musicButton.textContent =
+                "❚❚";
+
+
+            musicTitle.textContent =
+                "♫ Andrea Sannino";
+
+
+            const started =
+                await playAudio(
+                    sanninoMusic
+                );
+
+
+            if (!started) {
+
+                sanninoIsPlaying =
+                    false;
+
+                updateMusicPlayer();
+
+            }
+
+        }
+
+
+        async function stopSannino(
+            resumeMain = true
+        ) {
+
+            if (!sanninoMusic) {
+                return;
+            }
+
+
+            sanninoMusic.pause();
+
+
+            sanninoIsPlaying =
+                false;
+
+
+            if (
+                resumeMain &&
+                pageEntered &&
+                mainMusicWasPlaying
+            ) {
+
+                music.volume =
+                    0.45;
+
+
+                const started =
+                    await playAudio(
+                        music
+                    );
+
+
+                if (started) {
+
+                    musicStarted =
+                        true;
+
+                }
+
+            }
+
+
+            mainMusicWasPlaying =
+                false;
+
+
+            updateMusicPlayer();
+
+        }
+
+
+        if (songMemory) {
+
+            songObserver =
+                new IntersectionObserver(
+
+                    async (entries) => {
+
+                        for (
+                            const entry
+                            of entries
+                        ) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                await startSannino();
+
+                            } else {
+
+                                if (
+                                    sanninoIsPlaying
+                                ) {
+
+                                    await stopSannino(
+                                        true
+                                    );
+
+                                }
+
+                            }
+
+                        }
+
+                    },
+
+                    {
+                        threshold:
+                            0.30
+                    }
+
+                );
+
+
+            songObserver.observe(
+                songMemory
+            );
+
+        }
+
+
+        /* =====================================================
+           SANNINO TERMINA
+        ===================================================== */
+
+        sanninoMusic.addEventListener(
+            "ended",
+            async () => {
+
+                sanninoIsPlaying =
+                    false;
+
+
+                if (
+                    pageEntered &&
+                    mainMusicWasPlaying &&
+                    !activeVideo
+                ) {
+
+                    music.volume =
+                        0.45;
+
+
+                    await playAudio(
+                        music
+                    );
+
+                }
+
+
+                mainMusicWasPlaying =
+                    false;
+
+
+                updateMusicPlayer();
+
+            }
+        );
+
+
+        /* =====================================================
+           PARALLASSE SFONDO
+        ===================================================== */
+
+        let ticking =
+            false;
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                if (!ticking) {
+
+                    window.requestAnimationFrame(
+                        () => {
+
+                            const scroll =
+                                window.scrollY;
+
+
+                            diaryBackground
+                                .style
+                                .backgroundPosition =
+                                `center ${scroll * 0.15}px`;
+
+
+                            ticking =
+                                false;
+
+                        }
+                    );
+
+
+                    ticking =
+                        true;
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        /* =====================================================
+           ANIMAZIONE GALLERIA
+        ===================================================== */
+
+        const galleryObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                if (
+                                    finalPhoto
+                                ) {
+
+                                    finalPhoto
+                                        .classList
+                                        .add(
+                                            "visible"
+                                        );
+
+                                }
+
+
+                                setTimeout(
+                                    () => {
+
+                                        if (
+                                            galleryTitle
+                                        ) {
+
+                                            galleryTitle
+                                                .classList
+                                                .add(
+                                                    "visible"
+                                                );
+
+                                        }
+
+                                    },
+                                    500
+                                );
+
+
+                                setTimeout(
+                                    () => {
+
+                                        if (
+                                            carouselWrapper
+                                        ) {
+
+                                            carouselWrapper
+                                                .classList
+                                                .add(
+                                                    "visible"
+                                                );
+
+                                        }
+
+                                    },
+                                    900
+                                );
+
+
+                                galleryObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.15
+                }
+
+            );
+
+
+        if (finalPhoto) {
+
+            galleryObserver.observe(
+                finalPhoto
+            );
+
+        }
+
+
+        /* =====================================================
+           CAROSELLO ORIZZONTALE
+        ===================================================== */
+
+        function scrollCarousel(
+            direction
+        ) {
+
+            if (!carousel) {
+                return;
+            }
+
+
+            const firstItem =
+                carousel.querySelector(
+                    ".carousel-item"
+                );
+
+
+            if (!firstItem) {
+                return;
+            }
+
+
+            const itemWidth =
+                firstItem.offsetWidth;
+
+
+            const gap =
+                22;
+
+
+            carousel.scrollBy({
+
+                left:
+                    direction *
+                    (
+                        itemWidth +
+                        gap
+                    ),
+
+                behavior:
+                    "smooth"
+
+            });
+
+        }
+
+
+        if (carouselLeft) {
+
+            carouselLeft.addEventListener(
+                "click",
+                () => {
+
+                    scrollCarousel(-1);
+
+                }
+            );
+
+        }
+
+
+        if (carouselRight) {
+
+            carouselRight.addEventListener(
+                "click",
+                () => {
+
+                    scrollCarousel(1);
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           DRAG CON MOUSE
+        ===================================================== */
+
+        let isDragging =
+            false;
+
+        let dragStartX =
+            0;
+
+        let dragScrollLeft =
+            0;
+
+
+        if (carousel) {
+
+            carousel.addEventListener(
+                "mousedown",
+                (event) => {
+
+                    isDragging =
+                        true;
+
+                    carousel.classList.add(
+                        "dragging"
+                    );
+
+
+                    dragStartX =
+                        event.pageX -
+                        carousel.offsetLeft;
+
+
+                    dragScrollLeft =
+                        carousel.scrollLeft;
+
+                }
+            );
+
+
+            carousel.addEventListener(
+                "mouseleave",
+                () => {
+
+                    isDragging =
+                        false;
+
+                    carousel.classList.remove(
+                        "dragging"
+                    );
+
+                }
+            );
+
+
+            carousel.addEventListener(
+                "mouseup",
+                () => {
+
+                    isDragging =
+                        false;
+
+                    carousel.classList.remove(
+                        "dragging"
+                    );
+
+                }
+            );
+
+
+            carousel.addEventListener(
+                "mousemove",
+                (event) => {
+
+                    if (!isDragging) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    const x =
+                        event.pageX -
+                        carousel.offsetLeft;
+
+
+                    const walk =
+                        (x - dragStartX) *
+                        1.5;
+
+
+                    carousel.scrollLeft =
+                        dragScrollLeft -
+                        walk;
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           TOUCH
+           Il touch del telefono usa
+           direttamente lo scroll nativo.
+        ===================================================== */
+
+
+        /* =====================================================
+           ROTELLA MOUSE
+           Trasforma la rotella verticale
+           in scorrimento orizzontale
+        ===================================================== */
+
+        if (carousel) {
+
+            carousel.addEventListener(
+                "wheel",
+                (event) => {
+
+                    if (
+                        Math.abs(
+                            event.deltaY
+                        ) >
+                        Math.abs(
+                            event.deltaX
+                        )
+                    ) {
+
+                        event.preventDefault();
+
+
+                        carousel.scrollLeft +=
+                            event.deltaY;
+
+                    }
+
+                },
+                {
+                    passive: false
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           VIDEO DELLA GALLERIA
+        ===================================================== */
+
+        carouselVideos.forEach(
+            (video) => {
+
+                video.playsInline =
+                    true;
+
+
+                video.addEventListener(
+                    "play",
+                    () => {
+
+                        /*
+                         * Mettiamo in pausa
+                         * gli altri video della
+                         * galleria.
+                         */
+
+                        carouselVideos.forEach(
+                            (otherVideo) => {
+
+                                if (
+                                    otherVideo !==
+                                    video
+                                ) {
+
+                                    otherVideo.pause();
+
+                                }
+
+                            }
+                        );
+
+
+                        /*
+                         * Se parte un video
+                         * della galleria,
+                         * mettiamo in pausa
+                         * la canzone principale.
+                         */
+
+                        if (
+                            music &&
+                            !music.paused
+                        ) {
+
+                            mainMusicWasPlaying =
+                                true;
+
+                            music.pause();
+
+                        }
+
+
+                        activeVideo =
+                            video;
+
+
+                        updateMusicPlayer();
+
+                    }
+                );
+
+
+                video.addEventListener(
+                    "pause",
+                    () => {
+
+                        if (
+                            activeVideo ===
+                            video
+                        ) {
+
+                            activeVideo =
+                                null;
+
+                        }
+
+
+                        /*
+                         * La musica riparte
+                         * soltanto se era
+                         * effettivamente attiva
+                         * prima del video.
+                         */
+
+                        if (
+                            mainMusicWasPlaying &&
+                            !sanninoIsPlaying
+                        ) {
+
+                            resumeMainMusic();
+
+                        }
+
+                    }
+                );
+
+
+                video.addEventListener(
+                    "ended",
+                    () => {
+
+                        if (
+                            activeVideo ===
+                            video
+                        ) {
+
+                            activeVideo =
+                                null;
+
+                        }
+
+
+                        if (
+                            mainMusicWasPlaying &&
+                            !sanninoIsPlaying
+                        ) {
+
+                            resumeMainMusic();
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           BLOCCA IL TRASCINAMENTO DELLE FOTO
+           DURANTE IL DRAG
+        ===================================================== */
+
+        if (carousel) {
+
+            carousel.addEventListener(
+                "dragstart",
+                (event) => {
+
+                    event.preventDefault();
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           CARICAMENTO PAGINA
+        ===================================================== */
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                if (
+                    memories.length > 0
+                ) {
+
+                    memories[0]
+                        .classList
+                        .add(
+                            "visible"
+                        );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
