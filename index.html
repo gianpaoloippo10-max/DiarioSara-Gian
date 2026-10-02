@@ -697,10 +697,6 @@
         }
 
 
-        /* =====================================================
-           FOTO GRANDE FINALE
-        ===================================================== */
-
         .final-photo {
             width: 100%;
 
@@ -820,7 +816,7 @@
 
 
         /* =====================================================
-           NUOVA GALLERIA ORIZZONTALE
+           CAROSELLO
         ===================================================== */
 
         .media-carousel-wrapper {
@@ -890,10 +886,6 @@
         }
 
 
-        /* =====================================================
-           SINGOLO ELEMENTO GALLERIA
-        ===================================================== */
-
         .carousel-item {
             position: relative;
 
@@ -955,19 +947,10 @@
         }
 
 
-        /* =====================================================
-           PRIMA FOTO DELLA GALLERIA
-           FOTO 1 LASCIATA NORMALE
-        ===================================================== */
-
         .carousel-item.first-photo img {
             object-fit: cover;
         }
 
-
-        /* =====================================================
-           ETICHETTA FOTO / VIDEO
-        ===================================================== */
 
         .media-label {
             position: absolute;
@@ -1017,10 +1000,6 @@
         }
 
 
-        /* =====================================================
-           GRADIENT GALLERIA
-        ===================================================== */
-
         .carousel-fade-left,
         .carousel-fade-right {
             position: absolute;
@@ -1060,10 +1039,6 @@
                 );
         }
 
-
-        /* =====================================================
-           FRECCE
-        ===================================================== */
 
         .carousel-arrow {
             position: absolute;
@@ -1144,10 +1119,6 @@
             right: 10px;
         }
 
-
-        /* =====================================================
-           INDICAZIONE SCORRIMENTO
-        ===================================================== */
 
         .carousel-hint {
             display: flex;
@@ -1539,10 +1510,6 @@
             }
 
 
-            /* =================================================
-               GALLERIA MOBILE
-            ================================================= */
-
             .final-gallery {
                 width: 100%;
 
@@ -1557,7 +1524,7 @@
                 padding:
                     0
                     3%;
-                
+
                 margin-bottom: 60px;
             }
 
@@ -1633,10 +1600,6 @@
                 font-size: 12px;
             }
 
-
-            /* =================================================
-               PLAYER MOBILE
-            ================================================= */
 
             .music-player {
                 bottom: 15px;
@@ -1758,36 +1721,19 @@
 
 
     <!-- =====================================================
-         AUDIO PRINCIPALE
+         UNICO AUDIO
+         IMPORTANTE:
+         non ci sono più due elementi audio separati
     ===================================================== -->
 
     <audio
         id="backgroundMusic"
-        loop
         preload="auto"
+        playsinline
     >
 
         <source
             src="canzoni/la-nostra-canzone.mp3"
-            type="audio/mpeg"
-        >
-
-        Il tuo browser non supporta l'audio.
-
-    </audio>
-
-
-    <!-- =====================================================
-         AUDIO RICORDO 12
-    ===================================================== -->
-
-    <audio
-        id="sanninoMusic"
-        preload="auto"
-    >
-
-        <source
-            src="canzoni/sannino.mp3"
             type="audio/mpeg"
         >
 
@@ -1881,9 +1827,7 @@
         >
 
 
-            <!-- =================================================
-                 RICORDO 1
-            ================================================= -->
+            <!-- RICORDO 1 -->
 
             <article class="memory">
 
@@ -1930,9 +1874,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 2
-            ================================================= -->
+            <!-- RICORDO 2 -->
 
             <article class="memory">
 
@@ -1978,9 +1920,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 3
-            ================================================= -->
+            <!-- RICORDO 3 -->
 
             <article class="memory">
 
@@ -2033,9 +1973,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 4
-            ================================================= -->
+            <!-- RICORDO 4 -->
 
             <article class="memory">
 
@@ -2090,9 +2028,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 5
-            ================================================= -->
+            <!-- RICORDO 5 -->
 
             <article class="memory">
 
@@ -2159,9 +2095,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 6
-            ================================================= -->
+            <!-- RICORDO 6 -->
 
             <article class="memory">
 
@@ -2209,9 +2143,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 7
-            ================================================= -->
+            <!-- RICORDO 7 -->
 
             <article class="memory">
 
@@ -2277,9 +2209,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 8
-            ================================================= -->
+            <!-- RICORDO 8 -->
 
             <article class="memory">
 
@@ -2332,9 +2262,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 9
-            ================================================= -->
+            <!-- RICORDO 9 -->
 
             <article class="memory">
 
@@ -2427,9 +2355,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 10
-            ================================================= -->
+            <!-- RICORDO 10 -->
 
             <article class="memory">
 
@@ -2499,9 +2425,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 11
-            ================================================= -->
+            <!-- RICORDO 11 -->
 
             <article class="memory">
 
@@ -2551,6 +2475,7 @@
 
             <!-- =================================================
                  RICORDO 12
+                 CAMBIO MUSICA
             ================================================= -->
 
             <article
@@ -2632,9 +2557,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 13
-            ================================================= -->
+            <!-- RICORDO 13 -->
 
             <article class="memory">
 
@@ -2679,9 +2602,7 @@
             </article>
 
 
-            <!-- =================================================
-                 RICORDO 14
-            ================================================= -->
+            <!-- RICORDO 14 -->
 
             <article class="memory">
 
@@ -2811,10 +2732,6 @@
         <section class="final-gallery">
 
 
-            <!-- =================================================
-                 FOTO GRANDE
-            ================================================= -->
-
             <div class="final-photo">
 
                 <img
@@ -2825,10 +2742,6 @@
 
             </div>
 
-
-            <!-- =================================================
-                 TITOLO
-            ================================================= -->
 
             <div class="gallery-title">
 
@@ -2843,10 +2756,6 @@
 
             </div>
 
-
-            <!-- =================================================
-                 CAROSELLO FOTO + VIDEO
-            ================================================= -->
 
             <div
                 class="media-carousel-wrapper"
@@ -2875,14 +2784,7 @@
                 >
 
 
-                    <!-- =================================================
-                         FOTO 1
-                         LASCIATA COSÌ COM'È
-                    ================================================= -->
-
-                    <div
-                        class="carousel-item first-photo"
-                    >
+                    <div class="carousel-item first-photo">
 
                         <span class="media-label">
                             Foto
@@ -2897,10 +2799,6 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         VIDEO 1
-                    ================================================= -->
 
                     <div class="carousel-item">
 
@@ -2927,10 +2825,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 2
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -2947,10 +2841,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 3
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -2966,10 +2856,6 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         VIDEO 2
-                    ================================================= -->
 
                     <div class="carousel-item">
 
@@ -2996,10 +2882,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 4
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -3016,10 +2898,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 5
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -3035,10 +2913,6 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         VIDEO 3
-                    ================================================= -->
 
                     <div class="carousel-item">
 
@@ -3065,10 +2939,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 6
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -3093,10 +2963,6 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         VIDEO 4
-                    ================================================= -->
 
                     <div class="carousel-item">
 
@@ -3123,10 +2989,6 @@
                     </div>
 
 
-                    <!-- =================================================
-                         FOTO 7
-                    ================================================= -->
-
                     <div class="carousel-item">
 
                         <span class="media-label">
@@ -3142,10 +3004,6 @@
 
                     </div>
 
-
-                    <!-- =================================================
-                         FOTO 8
-                    ================================================= -->
 
                     <div class="carousel-item">
 
@@ -3280,17 +3138,22 @@
 
     <script>
 
-  if ("scrollRestoration" in history) {
+        /* =====================================================
+           RESET SCROLL
+        ===================================================== */
+
+        if ("scrollRestoration" in history) {
             history.scrollRestoration = "manual";
         }
 
         window.scrollTo(0, 0);
 
-        window.addEventListener("beforeunload", () => {
-            window.scrollTo(0, 0);
-        });
-
-
+        window.addEventListener(
+            "beforeunload",
+            () => {
+                window.scrollTo(0, 0);
+            }
+        );
 
 
         /* =====================================================
@@ -3302,60 +3165,45 @@
                 "backgroundMusic"
             );
 
-
-        const sanninoMusic =
-            document.getElementById(
-                "sanninoMusic"
-            );
-
-
         const enterButton =
             document.getElementById(
                 "enterButton"
             );
-
 
         const musicPlayer =
             document.getElementById(
                 "musicPlayer"
             );
 
-
         const musicButton =
             document.getElementById(
                 "musicButton"
             );
-
 
         const musicTitle =
             document.getElementById(
                 "musicTitle"
             );
 
-
         const diaryBackground =
             document.getElementById(
                 "diaryBackground"
             );
-
 
         const diary =
             document.getElementById(
                 "diario"
             );
 
-
         const memories =
             document.querySelectorAll(
                 ".memory"
             );
 
-
         const videos =
             document.querySelectorAll(
                 ".memory video"
             );
-
 
         const songMemory =
             document.getElementById(
@@ -3372,36 +3220,30 @@
                 ".final-photo"
             );
 
-
         const galleryTitle =
             document.querySelector(
                 ".gallery-title"
             );
-
 
         const carouselWrapper =
             document.getElementById(
                 "mediaCarouselWrapper"
             );
 
-
         const carousel =
             document.getElementById(
                 "mediaCarousel"
             );
-
 
         const carouselLeft =
             document.getElementById(
                 "carouselLeft"
             );
 
-
         const carouselRight =
             document.getElementById(
                 "carouselRight"
             );
-
 
         const carouselVideos =
             document.querySelectorAll(
@@ -3410,52 +3252,142 @@
 
 
         /* =====================================================
-           STATO AUDIO
+           CONFIGURAZIONE AUDIO
         ===================================================== */
+
+        const MAIN_SONG =
+            "canzoni/la-nostra-canzone.mp3";
+
+        const SANNINO_SONG =
+            "canzoni/sannino.mp3";
+
+
+        /* =====================================================
+           STATO
+        ===================================================== */
+
+        let pageEntered = false;
 
         let musicStarted = false;
 
         let sanninoIsPlaying = false;
 
+        let sanninoActive = false;
+
         let mainMusicWasPlaying = false;
+
+        let mainMusicTime = 0;
 
         let activeVideo = null;
 
-        let pageEntered = false;
+        let changingSong = false;
+
+        let sanninoObserverCooldown = false;
 
 
         /* =====================================================
-           PLAY AUDIO SICURO
+           CAMBIO SORGENTE AUDIO
         ===================================================== */
 
-        async function playAudio(audio) {
+        function changeAudioSource(
+            source,
+            loop = false
+        ) {
 
-            if (!audio) {
-                return false;
-            }
+            return new Promise(
+                (resolve) => {
+
+                    /*
+                     * IMPORTANTE:
+                     * prima fermiamo il player.
+                     */
+
+                    music.pause();
+
+
+                    /*
+                     * Cambiamo la sorgente
+                     * senza creare un secondo
+                     * elemento audio.
+                     */
+
+                    music.src = source;
+
+                    music.loop = loop;
+
+                    music.load();
+
+
+                    /*
+                     * Aspettiamo che il browser
+                     * abbia riconosciuto la nuova
+                     * sorgente.
+                     */
+
+                    const onLoaded = () => {
+
+                        music.removeEventListener(
+                            "loadeddata",
+                            onLoaded
+                        );
+
+                        resolve();
+                    };
+
+
+                    music.addEventListener(
+                        "loadeddata",
+                        onLoaded,
+                        {
+                            once: true
+                        }
+                    );
+
+
+                    /*
+                     * Fallback nel caso in cui
+                     * loadeddata arrivi molto rapidamente.
+                     */
+
+                    setTimeout(
+                        () => {
+
+                            resolve();
+
+                        },
+                        1500
+                    );
+                }
+            );
+        }
+
+
+        /* =====================================================
+           PLAY SICURO
+        ===================================================== */
+
+        async function playMusic() {
 
             try {
 
-                await audio.play();
+                await music.play();
 
                 return true;
 
             } catch (error) {
 
                 console.log(
-                    "Riproduzione audio bloccata:",
+                    "Play audio bloccato:",
                     error
                 );
 
                 return false;
-
             }
-
         }
 
 
         /* =====================================================
-           AGGIORNA PLAYER
+           PLAYER
         ===================================================== */
 
         function updateMusicPlayer() {
@@ -3467,6 +3399,11 @@
 
                 musicTitle.textContent =
                     "♫ Andrea Sannino";
+
+                musicButton.setAttribute(
+                    "aria-label",
+                    "Metti in pausa"
+                );
 
                 return;
             }
@@ -3483,12 +3420,22 @@
                 musicTitle.textContent =
                     "♫ La nostra canzone";
 
+                musicButton.setAttribute(
+                    "aria-label",
+                    "Metti in pausa"
+                );
+
                 return;
             }
 
 
             musicButton.textContent =
                 "▶";
+
+            musicButton.setAttribute(
+                "aria-label",
+                "Riproduci musica"
+            );
         }
 
 
@@ -3500,45 +3447,65 @@
 
             pageEntered = true;
 
-
             musicPlayer.classList.add(
                 "active"
             );
-
 
             diaryBackground.classList.add(
                 "visible"
             );
 
 
-            if (music) {
+            /*
+             * Assicuriamoci che il player
+             * sia sulla canzone principale.
+             */
 
-                music.volume =
-                    0.45;
+            sanninoIsPlaying = false;
+
+            sanninoActive = false;
+
+            music.loop = true;
 
 
-                const started =
-                    await playAudio(
-                        music
-                    );
+            if (
+                music.src.indexOf(
+                    "la-nostra-canzone.mp3"
+                ) === -1
+            ) {
+
+                await changeAudioSource(
+                    MAIN_SONG,
+                    true
+                );
+            }
 
 
-                if (started) {
+            music.volume = 0.45;
 
-                    musicStarted =
-                        true;
 
-                    updateMusicPlayer();
+            /*
+             * Questo play avviene direttamente
+             * dal click dell'utente.
+             *
+             * È fondamentale per i telefoni.
+             */
 
-                }
+            const started =
+                await playMusic();
 
+
+            if (started) {
+
+                musicStarted = true;
+
+                updateMusicPlayer();
             }
 
 
             diary.scrollIntoView({
                 behavior: "smooth"
             });
-
         }
 
 
@@ -3549,35 +3516,14 @@
 
 
         /* =====================================================
-           PLAY / PAUSA MUSICA
+           PLAY / PAUSA
         ===================================================== */
 
         async function toggleMusic() {
 
-            if (sanninoIsPlaying) {
-
-                if (
-                    sanninoMusic.paused
-                ) {
-
-                    await playAudio(
-                        sanninoMusic
-                    );
-
-                } else {
-
-                    sanninoMusic.pause();
-
-                }
-
-
-                updateMusicPlayer();
-
-                return;
-            }
-
-
-            if (!music) {
+            if (
+                changingSong
+            ) {
                 return;
             }
 
@@ -3585,24 +3531,27 @@
             if (music.paused) {
 
                 music.volume =
-                    0.45;
+                    sanninoIsPlaying
+                        ? 0.8
+                        : 0.45;
 
-                await playAudio(
-                    music
-                );
 
-                musicStarted =
-                    true;
+                const started =
+                    await playMusic();
+
+
+                if (started) {
+
+                    musicStarted = true;
+                }
 
             } else {
 
                 music.pause();
-
             }
 
 
             updateMusicPlayer();
-
         }
 
 
@@ -3633,7 +3582,6 @@
                                     .add(
                                         "visible"
                                     );
-
                             }
 
                         }
@@ -3644,7 +3592,6 @@
                 {
                     threshold: 0.15
                 }
-
             );
 
 
@@ -3654,16 +3601,15 @@
                 observer.observe(
                     memory
                 );
-
             }
         );
 
 
         /* =====================================================
-           VIDEO DEI RICORDI
+           VIDEO
         ===================================================== */
 
-        function stopMainMusicForVideo() {
+        function stopMusicForVideo() {
 
             if (
                 music &&
@@ -3671,41 +3617,40 @@
             ) {
 
                 mainMusicWasPlaying =
-                    true;
+                    !sanninoIsPlaying;
 
                 music.pause();
-
             }
 
 
             updateMusicPlayer();
-
         }
 
 
-        async function resumeMainMusic() {
+        async function resumeMusicAfterVideo() {
 
-            if (sanninoIsPlaying) {
+            if (
+                activeVideo
+            ) {
                 return;
             }
 
 
             if (
-                !music ||
+                sanninoIsPlaying
+            ) {
+                return;
+            }
+
+
+            if (
                 !mainMusicWasPlaying
             ) {
-
-                updateMusicPlayer();
-
                 return;
             }
 
 
-            if (
-                activeVideo &&
-                !activeVideo.paused
-            ) {
-
+            if (!pageEntered) {
                 return;
             }
 
@@ -3714,17 +3659,20 @@
                 0.45;
 
 
-            await playAudio(
-                music
-            );
+            const started =
+                await playMusic();
 
 
-            mainMusicWasPlaying =
-                false;
+            if (started) {
+
+                mainMusicWasPlaying =
+                    false;
+
+                musicStarted = true;
+            }
 
 
             updateMusicPlayer();
-
         }
 
 
@@ -3734,6 +3682,10 @@
                 video.playsInline =
                     true;
 
+                video.setAttribute(
+                    "playsinline",
+                    ""
+                );
 
                 video.preload =
                     "metadata";
@@ -3746,8 +3698,7 @@
                         activeVideo =
                             video;
 
-                        stopMainMusicForVideo();
-
+                        stopMusicForVideo();
                     }
                 );
 
@@ -3763,11 +3714,10 @@
 
                             activeVideo =
                                 null;
-
-                            resumeMainMusic();
-
                         }
 
+
+                        resumeMusicAfterVideo();
                     }
                 );
 
@@ -3783,11 +3733,10 @@
 
                             activeVideo =
                                 null;
-
-                            resumeMainMusic();
-
                         }
 
+
+                        resumeMusicAfterVideo();
                     }
                 );
 
@@ -3796,7 +3745,7 @@
 
 
         /* =====================================================
-           AUTOPLAY VIDEO RICORDI
+           AUTOPLAY VIDEO
         ===================================================== */
 
         const videoObserver =
@@ -3817,16 +3766,33 @@
                             entry.isIntersecting
                         ) {
 
+                            /*
+                             * Sannino ha priorità.
+                             */
+
                             if (
                                 sanninoIsPlaying
                             ) {
 
                                 continue;
-
                             }
 
 
-                            stopMainMusicForVideo();
+                            /*
+                             * Se la musica principale
+                             * è attiva, la fermiamo.
+                             */
+
+                            if (
+                                music &&
+                                !music.paused
+                            ) {
+
+                                mainMusicWasPlaying =
+                                    true;
+
+                                music.pause();
+                            }
 
 
                             try {
@@ -3847,6 +3813,11 @@
                                 );
 
 
+                                /*
+                                 * Fallback mobile:
+                                 * video silenzioso.
+                                 */
+
                                 try {
 
                                     video.muted =
@@ -3862,25 +3833,20 @@
                                         "Impossibile avviare il video:",
                                         secondError
                                     );
-
                                 }
-
                             }
 
                         } else {
 
                             video.pause();
-
                         }
 
                     }
-
                 },
 
                 {
                     threshold: 0.55
                 }
-
             );
 
 
@@ -3890,145 +3856,273 @@
                 videoObserver.observe(
                     video
                 );
-
             }
         );
 
 
         /* =====================================================
-           RICORDO 12 - SANNINO
+           RICORDO 12
+           CAMBIO ALLA CANZONE SANNINO
         ===================================================== */
-
-        let songObserver = null;
-
 
         async function startSannino() {
 
-            if (!sanninoMusic) {
+            /*
+             * Evita più cambi contemporaneamente.
+             */
+
+            if (
+                changingSong ||
+                sanninoIsPlaying
+            ) {
+
                 return;
             }
 
 
-            if (sanninoIsPlaying) {
+            /*
+             * Se l'utente non ha ancora premuto
+             * "Entra", non facciamo nulla.
+             */
+
+            if (
+                !pageEntered
+            ) {
+
                 return;
             }
 
 
-            mainMusicWasPlaying =
-                music &&
-                !music.paused;
-
-
-            if (music) {
-
-                music.pause();
-
-            }
-
-
-            videos.forEach(
-                (video) => {
-
-                    if (
-                        !video.paused
-                    ) {
-
-                        video.pause();
-
-                    }
-
-                }
-            );
-
-
-            sanninoMusic.pause();
-
-            sanninoMusic.currentTime =
-                0;
-
-            sanninoMusic.volume =
-                0.8;
-
-
-            sanninoIsPlaying =
+            changingSong =
                 true;
 
 
-            musicButton.textContent =
-                "❚❚";
+            try {
+
+                /*
+                 * Salviamo la posizione
+                 * della canzone principale.
+                 */
+
+                mainMusicTime =
+                    music.currentTime;
 
 
-            musicTitle.textContent =
-                "♫ Andrea Sannino";
+                mainMusicWasPlaying =
+                    !music.paused;
 
 
-            const started =
-                await playAudio(
-                    sanninoMusic
+                /*
+                 * Fermiamo eventuali video.
+                 */
+
+                videos.forEach(
+                    (video) => {
+
+                        if (
+                            !video.paused
+                        ) {
+
+                            video.pause();
+                        }
+                    }
                 );
 
 
-            if (!started) {
+                activeVideo =
+                    null;
+
+
+                /*
+                 * Cambiamo canzone.
+                 */
+
+                await changeAudioSource(
+                    SANNINO_SONG,
+                    false
+                );
+
+
+                music.volume =
+                    0.8;
+
+
+                sanninoIsPlaying =
+                    true;
+
+                sanninoActive =
+                    true;
+
+
+                musicTitle.textContent =
+                    "♫ Andrea Sannino";
+
+
+                musicButton.textContent =
+                    "❚❚";
+
+
+                /*
+                 * Tentiamo il play.
+                 */
+
+                const started =
+                    await playMusic();
+
+
+                if (!started) {
+
+                    /*
+                     * Se il browser mobile
+                     * blocca il cambio automatico,
+                     * torniamo alla canzone principale.
+                     */
+
+                    sanninoIsPlaying =
+                        false;
+
+                    sanninoActive =
+                        false;
+
+
+                    await changeAudioSource(
+                        MAIN_SONG,
+                        true
+                    );
+
+
+                    music.currentTime =
+                        mainMusicTime;
+
+
+                    music.volume =
+                        0.45;
+
+
+                    if (
+                        mainMusicWasPlaying
+                    ) {
+
+                        await playMusic();
+                    }
+
+
+                    updateMusicPlayer();
+
+                    return;
+                }
+
+
+                updateMusicPlayer();
+
+            } finally {
+
+                changingSong =
+                    false;
+            }
+        }
+
+
+        /* =====================================================
+           STOP SANNINO
+        ===================================================== */
+
+        async function stopSannino() {
+
+            if (
+                changingSong ||
+                !sanninoIsPlaying
+            ) {
+
+                return;
+            }
+
+
+            changingSong =
+                true;
+
+
+            try {
+
+                /*
+                 * Salviamo se Sannino era in riproduzione.
+                 */
+
+                music.pause();
+
 
                 sanninoIsPlaying =
                     false;
 
-                updateMusicPlayer();
-
-            }
-
-        }
+                sanninoActive =
+                    false;
 
 
-        async function stopSannino(
-            resumeMain = true
-        ) {
+                /*
+                 * Torniamo alla canzone principale.
+                 */
 
-            if (!sanninoMusic) {
-                return;
-            }
-
-
-            sanninoMusic.pause();
+                await changeAudioSource(
+                    MAIN_SONG,
+                    true
+                );
 
 
-            sanninoIsPlaying =
-                false;
+                /*
+                 * Riprendiamo esattamente
+                 * dal punto precedente.
+                 */
 
+                music.currentTime =
+                    mainMusicTime;
 
-            if (
-                resumeMain &&
-                pageEntered &&
-                mainMusicWasPlaying
-            ) {
 
                 music.volume =
                     0.45;
 
 
-                const started =
-                    await playAudio(
-                        music
-                    );
+                /*
+                 * La canzone riparte soltanto
+                 * se era in riproduzione prima
+                 * del cambio.
+                 */
+
+                if (
+                    mainMusicWasPlaying &&
+                    pageEntered
+                ) {
+
+                    const started =
+                        await playMusic();
 
 
-                if (started) {
+                    if (started) {
 
-                    musicStarted =
-                        true;
-
+                        musicStarted =
+                            true;
+                    }
                 }
 
+
+                mainMusicWasPlaying =
+                    false;
+
+
+                updateMusicPlayer();
+
+            } finally {
+
+                changingSong =
+                    false;
             }
-
-
-            mainMusicWasPlaying =
-                false;
-
-
-            updateMusicPlayer();
-
         }
+
+
+        /* =====================================================
+           OBSERVER RICORDO 12
+        ===================================================== */
+
+        let songObserver = null;
 
 
         if (songMemory) {
@@ -4043,80 +4137,181 @@
                             of entries
                         ) {
 
+                            /*
+                             * Entriamo nel ricordo:
+                             * Sannino.
+                             */
+
                             if (
                                 entry.isIntersecting
                             ) {
 
+                                if (
+                                    sanninoObserverCooldown
+                                ) {
+
+                                    continue;
+                                }
+
+
+                                sanninoObserverCooldown =
+                                    true;
+
+
                                 await startSannino();
+
+
+                                /*
+                                 * Piccolo cooldown:
+                                 * evita doppi trigger durante
+                                 * lo scroll mobile.
+                                 */
+
+                                setTimeout(
+                                    () => {
+
+                                        sanninoObserverCooldown =
+                                            false;
+
+                                    },
+                                    800
+                                );
 
                             } else {
 
+                                /*
+                                 * Non basta che il bordo
+                                 * esca per un istante.
+                                 *
+                                 * Controlliamo che il ricordo
+                                 * sia davvero fuori dallo schermo.
+                                 */
+
+                                const rect =
+                                    songMemory
+                                        .getBoundingClientRect();
+
+
+                                const completelyAbove =
+                                    rect.bottom <= 0;
+
+
+                                const completelyBelow =
+                                    rect.top >=
+                                    window.innerHeight;
+
+
                                 if (
-                                    sanninoIsPlaying
+                                    completelyAbove ||
+                                    completelyBelow
                                 ) {
 
-                                    await stopSannino(
-                                        true
-                                    );
+                                    if (
+                                        sanninoIsPlaying
+                                    ) {
 
+                                        await stopSannino();
+                                    }
                                 }
-
                             }
-
                         }
 
                     },
 
                     {
-                        threshold:
-                            0.30
-                    }
+                        /*
+                         * Deve essere abbastanza visibile
+                         * prima di cambiare canzone.
+                         */
 
+                        threshold: 0.45,
+
+                        /*
+                         * Evita trigger troppo anticipati
+                         * sui telefoni.
+                         */
+
+                        rootMargin:
+                            "-5% 0px -5% 0px"
+                    }
                 );
 
 
             songObserver.observe(
                 songMemory
             );
-
         }
 
 
         /* =====================================================
-           SANNINO TERMINA
+           SANNINO FINISCE
         ===================================================== */
 
-        sanninoMusic.addEventListener(
+        music.addEventListener(
             "ended",
             async () => {
 
-                sanninoIsPlaying =
-                    false;
-
+                /*
+                 * Se stava suonando Sannino,
+                 * torniamo automaticamente
+                 * alla canzone principale.
+                 */
 
                 if (
-                    pageEntered &&
-                    mainMusicWasPlaying &&
-                    !activeVideo
+                    sanninoIsPlaying
                 ) {
+
+                    sanninoIsPlaying =
+                        false;
+
+                    sanninoActive =
+                        false;
+
+
+                    await changeAudioSource(
+                        MAIN_SONG,
+                        true
+                    );
+
+
+                    music.currentTime =
+                        mainMusicTime;
+
 
                     music.volume =
                         0.45;
 
 
-                    await playAudio(
-                        music
-                    );
+                    if (
+                        mainMusicWasPlaying
+                    ) {
 
+                        await playMusic();
+                    }
+
+
+                    mainMusicWasPlaying =
+                        false;
+
+
+                    updateMusicPlayer();
                 }
+            }
+        );
 
 
-                mainMusicWasPlaying =
-                    false;
+        /* =====================================================
+           ERRORI AUDIO
+        ===================================================== */
 
+        music.addEventListener(
+            "error",
+            () => {
 
-                updateMusicPlayer();
-
+                console.log(
+                    "Errore audio:",
+                    music.error
+                );
             }
         );
 
@@ -4150,14 +4345,12 @@
 
                             ticking =
                                 false;
-
                         }
                     );
 
 
                     ticking =
                         true;
-
                 }
 
             },
@@ -4192,7 +4385,6 @@
                                         .add(
                                             "visible"
                                         );
-
                                 }
 
 
@@ -4208,7 +4400,6 @@
                                                 .add(
                                                     "visible"
                                                 );
-
                                         }
 
                                     },
@@ -4228,7 +4419,6 @@
                                                 .add(
                                                     "visible"
                                                 );
-
                                         }
 
                                     },
@@ -4240,18 +4430,14 @@
                                     .unobserve(
                                         entry.target
                                     );
-
                             }
-
                         }
                     );
-
                 },
 
                 {
                     threshold: 0.15
                 }
-
             );
 
 
@@ -4260,12 +4446,11 @@
             galleryObserver.observe(
                 finalPhoto
             );
-
         }
 
 
         /* =====================================================
-           CAROSELLO ORIZZONTALE
+           CAROSELLO
         ===================================================== */
 
         function scrollCarousel(
@@ -4293,7 +4478,9 @@
 
 
             const gap =
-                22;
+                window.innerWidth <= 800
+                    ? 14
+                    : 22;
 
 
             carousel.scrollBy({
@@ -4307,9 +4494,7 @@
 
                 behavior:
                     "smooth"
-
             });
-
         }
 
 
@@ -4320,10 +4505,8 @@
                 () => {
 
                     scrollCarousel(-1);
-
                 }
             );
-
         }
 
 
@@ -4334,15 +4517,13 @@
                 () => {
 
                     scrollCarousel(1);
-
                 }
             );
-
         }
 
 
         /* =====================================================
-           DRAG CON MOUSE
+           DRAG MOUSE
         ===================================================== */
 
         let isDragging =
@@ -4376,7 +4557,6 @@
 
                     dragScrollLeft =
                         carousel.scrollLeft;
-
                 }
             );
 
@@ -4391,7 +4571,6 @@
                     carousel.classList.remove(
                         "dragging"
                     );
-
                 }
             );
 
@@ -4406,7 +4585,6 @@
                     carousel.classList.remove(
                         "dragging"
                     );
-
                 }
             );
 
@@ -4415,7 +4593,9 @@
                 "mousemove",
                 (event) => {
 
-                    if (!isDragging) {
+                    if (
+                        !isDragging
+                    ) {
                         return;
                     }
 
@@ -4429,31 +4609,22 @@
 
 
                     const walk =
-                        (x - dragStartX) *
-                        1.5;
+                        (
+                            x -
+                            dragStartX
+                        ) * 1.5;
 
 
                     carousel.scrollLeft =
                         dragScrollLeft -
                         walk;
-
                 }
             );
-
         }
 
 
         /* =====================================================
-           TOUCH
-           Il touch del telefono usa
-           direttamente lo scroll nativo.
-        ===================================================== */
-
-
-        /* =====================================================
            ROTELLA MOUSE
-           Trasforma la rotella verticale
-           in scorrimento orizzontale
         ===================================================== */
 
         if (carousel) {
@@ -4476,7 +4647,6 @@
 
                         carousel.scrollLeft +=
                             event.deltaY;
-
                     }
 
                 },
@@ -4484,12 +4654,11 @@
                     passive: false
                 }
             );
-
         }
 
 
         /* =====================================================
-           VIDEO DELLA GALLERIA
+           VIDEO GALLERIA
         ===================================================== */
 
         carouselVideos.forEach(
@@ -4498,15 +4667,18 @@
                 video.playsInline =
                     true;
 
+                video.setAttribute(
+                    "playsinline",
+                    ""
+                );
+
 
                 video.addEventListener(
                     "play",
                     () => {
 
                         /*
-                         * Mettiamo in pausa
-                         * gli altri video della
-                         * galleria.
+                         * Ferma gli altri video.
                          */
 
                         carouselVideos.forEach(
@@ -4518,19 +4690,27 @@
                                 ) {
 
                                     otherVideo.pause();
-
                                 }
-
                             }
                         );
 
 
                         /*
-                         * Se parte un video
-                         * della galleria,
-                         * mettiamo in pausa
-                         * la canzone principale.
+                         * Se Sannino sta suonando,
+                         * lo fermiamo prima del video.
                          */
+
+                        if (
+                            sanninoIsPlaying
+                        ) {
+
+                            sanninoIsPlaying =
+                                false;
+
+                            sanninoActive =
+                                false;
+                        }
+
 
                         if (
                             music &&
@@ -4541,7 +4721,6 @@
                                 true;
 
                             music.pause();
-
                         }
 
 
@@ -4550,7 +4729,6 @@
 
 
                         updateMusicPlayer();
-
                     }
                 );
 
@@ -4566,26 +4744,16 @@
 
                             activeVideo =
                                 null;
-
                         }
 
-
-                        /*
-                         * La musica riparte
-                         * soltanto se era
-                         * effettivamente attiva
-                         * prima del video.
-                         */
 
                         if (
                             mainMusicWasPlaying &&
                             !sanninoIsPlaying
                         ) {
 
-                            resumeMainMusic();
-
+                            resumeMusicAfterVideo();
                         }
-
                     }
                 );
 
@@ -4601,7 +4769,6 @@
 
                             activeVideo =
                                 null;
-
                         }
 
 
@@ -4610,20 +4777,16 @@
                             !sanninoIsPlaying
                         ) {
 
-                            resumeMainMusic();
-
+                            resumeMusicAfterVideo();
                         }
-
                     }
                 );
-
             }
         );
 
 
         /* =====================================================
-           BLOCCA IL TRASCINAMENTO DELLE FOTO
-           DURANTE IL DRAG
+           BLOCCA DRAG FOTO
         ===================================================== */
 
         if (carousel) {
@@ -4633,10 +4796,8 @@
                 (event) => {
 
                     event.preventDefault();
-
                 }
             );
-
         }
 
 
@@ -4657,9 +4818,7 @@
                         .add(
                             "visible"
                         );
-
                 }
-
             }
         );
 
